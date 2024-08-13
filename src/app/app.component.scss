@@ -1,0 +1,16 @@
+main {
+    padding-left: 230px;  /* Considera si necesitas que esto sea adaptable a diferentes tamaños de pantalla */
+    padding-top: 56px;    /* Puedes usar rem en lugar de px para escalabilidad */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;     /* Esto mantiene todo el desbordamiento oculto en el nivel del main */
+}
+
+.page-content {
+    overflow-y: auto;     /* Muestra barras de desplazamiento sólo cuando es necesario */
+    height: 100%;
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+    /* Puedes agregar más estilos aquí según lo necesites */
+}

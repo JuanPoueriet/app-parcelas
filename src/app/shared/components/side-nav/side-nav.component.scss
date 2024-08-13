@@ -1,0 +1,127 @@
+aside {
+    height: 100vh;
+    width: 240px;
+    position: fixed;
+    // background-color: rgba(99, 99, 99, 0.185);
+    background-color: var(--app-spec-base-background);
+
+    left: 0;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-actived-link * {
+    color: var(--app-spec-primary-color) !important;
+    stroke: var(--app-spec-primary-color) !important;
+}
+
+.app-name {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-container {
+    width: 100%;
+    // background-color: aqua;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    gap: 10px;
+}
+
+.logo-image {
+    width: 100px;
+}
+
+// .nav-actived-link::after {
+
+//     content: '';
+//     position: absolute;
+//     height: 55%;
+//     width: 3px;
+//     background-color: var(--app-spec-primary-color);
+//     left: 0px;
+//     border-top-right-radius: 2px;
+//     border-bottom-right-radius: 2px;
+// }
+
+.nav-links-container {
+    width: 100%;
+    height: 100%;
+    // background-color: aliceblue;
+    border-top: solid 1px var(--app-spec-border-color);
+    border-bottom: solid 1px var(--app-spec-border-color);
+    padding-top: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    // gap: 5px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    border-radius: 5px;
+    // width: 100%;
+    width: calc(100% - 12px);
+
+}
+
+.nav-link:hover {
+
+    // background-color: rgba(255, 255, 255, 0.1);
+    background-color: #202328;
+    // border: 1px solid #32373b;
+}
+
+.nav-actived-link {
+    // background-color: rgba(255, 255, 255, 0.1);
+    // background-color: #202328;
+    background-color: rgba(255,255,255,0.1);
+    // border: 1px solid #32373b;
+    // margin-bottom: 3px;
+    position: relative;
+
+}
+
+.nav-link-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 48px;
+    // background-color: aqua;
+}
+
+.nav-link-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    // background-color: rgb(34, 255, 0);
+    padding-left: 10px;
+
+
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 1rem;
+    line-height: 2rem;
+    // font-weight: 300;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.logout {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}

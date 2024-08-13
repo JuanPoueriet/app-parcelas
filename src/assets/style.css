@@ -1,0 +1,299 @@
+:root {
+  --column-0-width: 100px;
+  --column-1-width: 160px;
+  --column-2-width: 220px;
+  --column-3-width: 160px;
+  --column-4-width: 110px;
+  --column-5-width: 100px;
+  --column-6-width: 200px;
+  --column-7-width: 160px;
+  --column-8-width: 120px;
+  --table-bottom: 1px solid #32373b;
+
+}
+
+.table-summary {
+  font-family: roboto, arial, helvetica, sans-serif;
+  color: #000000 !important;
+  border-radius: 7px;
+  overflow: hidden;
+  width: auto;
+  border: 1px solid #32373b;
+  /* -webkit-print-color-adjust: exact; */
+}
+
+.table-summary-head {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid #32373b;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  height: 56px;
+  background-color: #202328;
+}
+
+.table-summary-body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.column-0,
+.column-1,
+.column-2,
+.column-3,
+.column-4,
+.column-5,
+.column-6,
+.column-7,
+.column-8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+}
+
+.column-0 {
+  min-width: var(--column-0-width);
+  max-width: var(--column-0-width);
+}
+
+.column-1 {
+  min-width: var(--column-1-width);
+  max-width: var(--column-1-width);
+}
+
+.column-2 {
+  min-width: var(--column-2-width);
+  max-width: var(--column-2-width);
+}
+
+.column-3 {
+  min-width: var(--column-3-width);
+  max-width: var(--column-3-width);
+}
+
+.column-4 {
+  min-width: var(--column-4-width);
+  max-width: var(--column-4-width);
+}
+
+.column-5 {
+  min-width: var(--column-5-width);
+  max-width: var(--column-5-width);
+}
+
+.column-6 {
+  min-width: var(--column-6-width);
+  max-width: var(--column-6-width);
+}
+
+.column-7 {
+  min-width: var(--column-7-width);
+  max-width: var(--column-7-width);
+}
+
+.column-8 {
+  min-width: var(--column-8-width);
+  max-width: var(--column-8-width);
+}
+
+.centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.table-summary-head .div {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255);
+}
+
+
+.grupo:last-child {
+  // border: none;
+}
+
+.grupo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: var(--table-bottom);
+  overflow: hidden;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+
+
+.grupos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.grupos:last-child {
+  /* border: none; */
+}
+
+
+
+.provincias {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+
+}
+
+.provincia {
+  overflow: hidden;
+  /* -webkit-print-color-adjust: exact // transition: background-color 0.25s ease; */
+    display: flex;
+  border-bottom: var(--table-bottom);
+  align-content: flex-start;
+  flex-wrap: wrap;
+
+}
+
+.provincia:last-child {
+  border-bottom: none;
+}
+
+
+
+
+.municipio {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-bottom: var(--table-bottom);
+  // transition: background-color 0.25s ease;
+  // background-color: #181a1b !important;
+  // z-index: 5;
+  overflow: hidden;
+  // height: 25px;
+}
+
+.provincia-nombre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 15px; */
+  /* width: 160px; */
+}
+
+.municipios {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.municipio div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.municipio:last-child {
+  border: none;
+}
+
+.provincias-resumen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.provincias-resumen div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  /* width: 100px; */
+}
+
+.municipio-nombre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 230px; */
+}
+
+.cant-parcelas-municipis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cant-parcelas-metros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+title{
+  display: none !important;
+}
+
+* {
+  font-family: 'Roboto';
+}
+
+
+.total {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
+dashboard-filter-summary,
+.paginato-section {
+  display: none;
+}
+
+/* Para Chrome, Edge, y Safari */
+@media print {
+  * {
+      -webkit-print-color-adjust: exact;
+  }
+}
+
+/* Para Firefox */
+@media print {
+  * {
+      color-adjust: exact; /* Estándar moderno, si está soportado */
+      -moz-print-color-adjust: exact; /* Prefijo para Firefox */
+  }
+}

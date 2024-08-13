@@ -1,0 +1,228 @@
+
+
+
+interface Municipality {
+    name: string;
+    id: string;
+    filtered: boolean;
+    quantity_of_parcels_per_municipality: number;
+    square_meters_per_municipality: number;
+    type: string;
+    disabled: boolean;
+  }
+  
+  interface Province {
+    name: string;
+    id: string;
+    ISO_CODE?: string;
+    filtered: boolean;
+    municipalities: Municipality[];
+    type: string;
+    disabled: boolean;
+  }
+  
+  interface Group {
+    name: string;
+    id: string;
+    filtered: boolean;
+    provinces: Province[];
+    type: string;
+    disabled: boolean,
+  }
+  
+  interface Parcel {
+    filtered: boolean;
+    quantity_of_parcels_per_municipality: number;
+    square_meters_per_municipality: number;
+    type: string;
+  }
+
+  data: Group[] = [{
+    "name": "1",
+    "id": "ipXmC3rg",
+    "filtered": false,
+    "disabled": false,
+    "type": "group",
+    "provinces": [
+      {
+        "name": "Santo Domingo",
+        "ISO_CODE": "DO-32",
+        "id": "DTWHeVPj",
+        "filtered": false,
+        "disabled": false,
+        "type": "province",
+        "municipalities": [
+          {
+            "name": "Santo Domingo Este",
+            "id": "LL5QlqJA",
+            "filtered": false,
+            "type": "municipality",
+            "disabled": false,
+            "quantity_of_parcels_per_municipality": 2452,
+            "square_meters_per_municipality": 1343554.72
+          },
+          {
+            "name": "Santo Domingo Norte",
+            "id": "gOX73hGS",
+            "filtered": false,
+            "type": "municipality",
+            "disabled": false,
+            "quantity_of_parcels_per_municipality": 234,
+            "square_meters_per_municipality": 784352
+          }
+        ]
+      },
+      {
+        "name": "Monte Plata",
+        "ISO_CODE": "DO-29",
+        "id": "csIjxvbe",
+        "filtered": false,
+        "disabled": false,
+        "type": "province",
+        "municipalities": [
+          {
+            "name": "Yamasá",
+            "id": "dk49IXRI",
+            "filtered": false,
+            "disabled": false,
+            "type": "municipality",
+            "quantity_of_parcels_per_municipality": 1234,
+            "square_meters_per_municipality": 4567
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "2",
+    "id": "qv1DM15i",
+    "filtered": false,
+    "disabled": false,
+    "type": "group",
+    "provinces": [
+      {
+        "name": "Samaná",
+        "ISO_CODE": "DO-20",
+        "id": "vrO44yDk",
+        "filtered": false,
+        "disabled": false,
+        "type": "province",
+        "municipalities": [
+          {
+            "name": "Las Terrenas",
+            "id": "6mqrELny",
+            "filtered": false,
+            "disabled": false,
+            "type": "municipality",
+            "quantity_of_parcels_per_municipality": 221,
+            "square_meters_per_municipality": 4352345
+          }
+        ]
+      },
+      {
+        "name": "La Altagracia",
+        "ISO_CODE": "DO-11",
+        "id": "X8xv9BGJ",
+        "filtered": false,
+        "disabled": false,
+        "type": "province",
+        "municipalities": [
+          {
+            "name": "Higüey",
+            "id": "nVTdF50v",
+            "filtered": false,
+            "disabled": false,
+            "type": "municipality",
+            "quantity_of_parcels_per_municipality": 3247,
+            "square_meters_per_municipality": 734672
+          }
+        ]
+      },
+      {
+        "name": "San Pedro",
+        "ISO_CODE": "DO-23",
+        "id": "ZHDSoAjw",
+        "filtered": false,
+        "disabled": false,
+        "type": "province",
+        "municipalities": [
+          {
+            "name": "San Pedro",
+            "id": "Ix7S0wZD",
+            "filtered": false,
+            "disabled": false,
+            "type": "municipality",
+            "quantity_of_parcels_per_municipality": 4235,
+            "square_meters_per_municipality": 467
+          }
+        ]
+      },
+      {
+        "name": "La Romana",
+        "ISO_CODE": "DO-12",
+        "id": "n4P2ruS8",
+        "filtered": false,
+        "disabled": false,
+        "type": "province",
+        "municipalities": [
+          {
+            "name": "Bayaibe",
+            "id": "ElKLdxu8",
+            "filtered": false,
+            "disabled": false,
+            "type": "municipality",
+            "quantity_of_parcels_per_municipality": 245,
+            "square_meters_per_municipality": 8975
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "3",
+    "id": "8mMr8lWH",
+    "filtered": false,
+    "disabled": false,
+    "type": "group",
+    "provinces": [
+      {
+        "name": "San Pedro",
+        "ISO_CODE": "DO-23",
+        "id": "lCoy7JQN",
+        "filtered": false,
+        "disabled": false,
+        "type": "province",
+        "municipalities": [
+          {
+            "name": "Bayaibe",
+            "id": "2kGZWX0T",
+            "filtered": false,
+            "disabled": false,
+            "type": "municipality",
+            "quantity_of_parcels_per_municipality": 456,
+            "square_meters_per_municipality": 865245
+          }
+        ]
+      },
+      {
+        "name": "Monte Cristi",
+        "ISO_CODE": "DO-15",
+        "id": "nc0Jd7Fn",
+        "filtered": false,
+        "disabled": false,
+        "type": "province",
+        "municipalities": [
+          {
+            "name": "Guayubín",
+            "id": "V2dLD0Px",
+            "filtered": false,
+            "disabled": false,
+            "type": "municipality",
+            "quantity_of_parcels_per_municipality": 784,
+            "square_meters_per_municipality": 36847
+          }
+        ]
+      }
+    ]
+  }
+  ]

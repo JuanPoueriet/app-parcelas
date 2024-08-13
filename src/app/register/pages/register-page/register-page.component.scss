@@ -1,0 +1,143 @@
+.property-form-container {
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.property-location {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-location {
+    display: flex;
+    gap: 20px;
+}
+
+.province-selector,
+.municipality-selector {
+    width: 270px;
+}
+
+
+.hectare-input,
+.area-input,
+.meters-input,
+.decimeters-input {
+    width: 150px;
+}
+
+.form-dimensions{
+    display: flex;
+    gap: 20px;
+}
+
+.legal-documentation{
+
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+.form-legal-docs{
+
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+
+
+.property-dimensions {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mat-form-field {
+    width: 150px;
+}
+
+.adsfasdf {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    // justify-content: space-evenly;
+}
+
+.dsfqwe {
+    width: 270px;
+}
+
+.asdfsdf {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    background-color: #20232892;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    // background-color: rgb(244, 244, 244);
+    border-color: white;
+}
+
+.inputfile-2 + label {
+    // color: #d3394c;
+    // margin-bottom: 100px;
+    height: 56px;
+    border: 1px solid var(--app-spec-border-color);
+    border-radius: 4px;
+    width: 212px;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    padding-right: 16px;
+    padding-left: 16px;
+
+    justify-content: flex-start;
+    gap: 16px;
+
+}
+
+.inputfile-2:focus + label,
+.inputfile-2.has-focus + label,
+.inputfile-2 + label:hover {
+    color: #722040;
+}
+
+
+.lskdgja{
+    height: 56px;
+    width: 210px;
+}
+
+
+
+
+.rosfsf{
+    display: flex;
+    gap: 10px;
+}

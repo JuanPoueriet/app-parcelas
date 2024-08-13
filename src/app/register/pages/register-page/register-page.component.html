@@ -1,0 +1,158 @@
+<form [formGroup]="plotsForm" (ngSubmit)="onFormSubmit()">
+    <div class="property-form-container">
+        <!-- Property Location Section -->
+        <section class="property-location">
+    
+            <div>Información de Ubicación:</div>
+    
+              <div class="rosfsf">
+                  <!-- Province Selector -->
+                  <mat-form-field appearance="outline" class="province-selector" [hideRequiredMarker]="true">
+                    <mat-label>Provincia</mat-label>
+                    <mat-select formControlName="provinceSelect" required>
+                        <mat-option *ngFor="let option of provinceOptions" [value]="option.id">
+                            {{ option.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+    
+                <!-- Municipality Selector -->
+                <mat-form-field appearance="outline" class="municipality-selector" [hideRequiredMarker]="true">
+                    <mat-label>Municipio</mat-label>
+                    <mat-select formControlName="municipalitySelect" required>
+                        <mat-option *ngFor="let option of municipalityOptions" [value]="option.id">
+                            {{ option.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+              </div>
+        </section>
+    
+        <!-- Property Dimensions Section -->
+        <section class="property-dimensions">
+            <div class="dimensions-header">Tamaño de la Propiedad:</div>
+                <!-- Dimension Inputs -->
+
+                <div class="rosfsf">
+                    <mat-form-field appearance="outline" class="hectare-input">
+                        <mat-label>Hectárea</mat-label>
+                        <input matInput formControlName="hectareInput" type="number" min="0">
+                    </mat-form-field>
+        
+        
+                    <mat-form-field appearance="outline" class="area-input">
+                        <mat-label>Área</mat-label>
+                        <input matInput formControlName="areaInput" type="number" min="0">
+                    </mat-form-field>
+        
+                    <mat-form-field appearance="outline" class="meters-input">
+                        <mat-label>Metros</mat-label>
+                        <input matInput formControlName="metersInput" type="number" min="0">
+                    </mat-form-field>
+        
+                    <mat-form-field appearance="outline" class="decimeters-input">
+                        <mat-label>Decímetros</mat-label>
+                        <input matInput formControlName="decimetersInput" type="number" min="0">
+                    </mat-form-field>
+                </div>
+               
+    
+                <mat-form-field appearance="outline" class="square-meters-input" [hideRequiredMarker]="true">
+                    <mat-label>Metros Cuadrados</mat-label>
+                    <input matInput formControlName="squareMetersInput" required>
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+        </section>
+    
+        <!-- Legal Documentation Section -->
+        <section class="legal-documentation">
+    
+            <div>Información de la Propiedad:</div>
+    
+                <!-- Cadastral District Input -->
+                <mat-form-field appearance="outline" class="cadastral-district-input" [hideRequiredMarker]="true">
+                    <mat-label>Distrito Catastral</mat-label>
+                    <input matInput formControlName="cadastralDistrictInput" required>
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="cadastral-district-input" [hideRequiredMarker]="true">
+                    <mat-label>Número de la Parcela</mat-label>
+                    <input matInput formControlName="parcelNumberInput" required>
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="cadastral-district-input" [hideRequiredMarker]="true">
+                    <mat-label>Certificado de Título</mat-label>
+                    <input matInput formControlName="titleCertificateInput" required>
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline" class="owner-selector" [hideRequiredMarker]="true">
+                    <mat-label>Propietario</mat-label>
+                    <mat-select formControlName="ownerSelect" required>
+                        <mat-option *ngFor="let owner of owners" [value]="owner.id">
+                            {{ owner.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>Required</mat-error>
+                </mat-form-field>
+    
+    
+    
+    
+            <div class="box">
+                <input type="file" name="file-2[]" id="file-2" class="inputfile inputfile-2"
+                    data-multiple-caption="{count} files selected" multiple />
+                <label for="file-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-upload" width="22"
+                        height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#c8c8c8" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                        <path d="M7 9l5 -5l5 5" />
+                        <path d="M12 4l0 12" />
+                    </svg>
+                    <span>Choose a file&hellip;</span></label>
+            </div>
+        </section>
+    
+        <!-- Ownership Information Section -->
+        <section class="ownership-information">
+                <!-- Owner Selector -->
+    
+        </section>
+    
+        <!-- Additional Comments Section -->
+        <section class="additional-comments">
+                <mat-form-field appearance="outline" class="comments-textarea">
+                    <mat-label>Comentario</mat-label>
+                    <textarea matInput formControlName="commentsInput"></textarea>
+                </mat-form-field>
+        </section>
+        
+        <button mat-flat-button color="primary" (submit)="onFormSubmit()" class="lskdgja">Save</button>
+        <!-- <form action="">
+        </form> -->
+    
+    
+    
+    
+        <!-- Document Upload Section -->
+        <!-- <section class="document-upload">
+            <form [formGroup]="documentUploadForm" class="form-document-upload">
+                <mat-form-field appearance="outline" class="document-upload-input">
+                    <mat-label>Subir Documento PDF</mat-label>
+                    <input matInput type="file" accept=".pdf" formControlName="pdfDocumentInput">
+                </mat-form-field>
+            </form>
+        </section> -->
+    
+        <!-- mapa.component.html -->
+        <!-- <google-map [center]="center" [zoom]="zoom" [options]="options" style="width: 100%; height: 100%">
+            Aquí puedes añadir marcadores y polígonos
+        </google-map> -->
+    
+    
+    </div>
+</form>

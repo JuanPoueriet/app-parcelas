@@ -1,0 +1,37 @@
+<!-- <div class="asdfasdf"></div> -->
+
+<div class="data-table">
+    <div class="table-rows table-head">
+        <div *ngIf="true" class="column-02">Propietarios <dashboard-filter-summary [filterType]="'owner'" [filterElement]="'name'"/>
+        </div>
+        <div *ngIf="true" class="column-03">Cantidad de Parcelas <dashboard-filter-summary [filterType]="'owner'" [filterElement]="'parcelCount'"/>
+        </div>
+        <div *ngIf="true" class="column-05">Metros Cuadrados <dashboard-filter-summary [filterType]="'owner'" [filterElement]="'squareMeters'"/>
+        </div>
+        <div *ngIf="true" class="column-07">Tareas <dashboard-filter-summary [filterType]="'owner'" [filterElement]="'tareas'"/>
+        </div>
+    </div>
+    <div class="table-body">
+        <ng-container *ngFor="let data of getDisplayedData()">
+
+            <div *ngIf="!data.filtered" class="table-rows" [@animacionAltura]="{value: state, params: {duration: animationDuration}}">
+
+                <div >
+                    <div *ngIf="true" class="column-02">{{data.name}}</div>
+                    <div *ngIf="true" class="column-03">{{data.parcelCount | number }}</div>
+                    <div *ngIf="true" class="column-05">{{data.squareMeters | number: '1.2-2'}}</div>
+                    <div *ngIf="true" class="column-07">{{(data.squareMeters / 628.86) | number: '1.2-2'}}</div>
+                </div>
+
+
+            </div>
+
+        </ng-container>
+
+        <div class="bottom-row">
+            <mat-paginator [length]="this.dataService.dataOwner.length" [pageSize]="10" [pageSizeOptions]="[10, 20, 50, 100]"
+                aria-label="Select page" [showFirstLastButtons]="true">
+            </mat-paginator>
+        </div>
+    </div>
+</div>

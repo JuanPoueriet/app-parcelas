@@ -1,0 +1,95 @@
+<div class="filter-cantainer">
+    <!-- <button (click)="afasfasd()">sadfasdf</button> -->
+    <button #menuButton matRipple class="menu-toggle-button" [ngClass]="{'active-menu':menuOpen}"
+        (click)="toggleMenu()">
+        <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" class="menu-icon"
+            viewBox="0 0 16.86 9.43">
+            <path [ngClass]="{'filtered': someFilteredOrNone() || menuOpen}"
+                d="m9.14,9.14l7.43-7.43c.63-.63.18-1.71-.71-1.71H1C.11,0-.34,1.08.3,1.71l7.43,7.43c.39.39,1.02.39,1.42,0Z" />
+        </svg>
+    </button>
+    <ng-template cdkPortal>
+        <div *ngIf="menuOpen" [@menu-animation]="{value: state, params: {duration: 200}}" class="menu" #menuasdf>
+            <div class="sorting-buttons">
+                <button matRipple [matRippleDisabled]="false" class="sort-asc-button">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon sort-asc-icon" width="20" height="20"
+                            viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path class="ass" d="M15 10v-5c0 -1.38 .62 -2 2 -2s2 .62 2 2v5m0 -3h-4" />
+                            <path d="M19 21h-4l4 -7h-4" />
+                            <path d="M4 15l3 3l3 -3" />
+                            <path d="M7 6v12" />
+                        </svg>
+                    </div>
+                    Ordenar de la A hasta la Z
+                </button>
+                <button matRipple [matRippleDisabled]="false" class="sort-desc-button">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon sort-desc-icon" width="20" height="20"
+                            viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path class="ass" d="M15 21v-5c0 -1.38 .62 -2 2 -2s2 .62 2 2v5m0 -3h-4" />
+                            <path d="M19 10h-4l4 -7h-4" />
+                            <path d="M4 15l3 3l3 -3" />
+                            <path d="M7 6v12" />
+                        </svg>
+                    </div>
+                    Ordenar de la Z hasta la A
+                </button>
+                <button matRipple [matRippleDisabled]="!someFilteredOrNone()" [disabled]="!someFilteredOrNone()"
+                    class="clear-filters-button" (click)="resetFilters()">
+                    <div class="icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon clear-filters-icon" width="20" height="20"
+                            viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M13.758 19.414l-4.758 1.586v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v1.5" />
+                            <path class="x" d="M22 22l-5 -5" />
+                            <path class="x" d="M17 22l5 -5" />
+                        </svg>
+                    </div>
+                    Eliminar todos los filtros
+                </button>
+            </div>
+            <div class="search-section">
+                <div class="search-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon search-icon" width="20" height="20"
+                        viewBox="0 0 24 24" stroke-width="1.25" stroke="#f1f1f1" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M15 15m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                        <path d="M18.5 18.5l2.5 2.5" />
+                        <path d="M4 6h16" />
+                        <path d="M4 12h4" />
+                        <path d="M4 18h4" />
+                    </svg>
+                </div>
+                <input [(ngModel)]="searchQuery" (input)="filtrarDatos()" type="search" class="search-input"
+                    placeholder="Buscar">
+            </div>
+            <div class="selection-section">
+                <div class="select-all-container">
+                    <mat-checkbox matRipple class="select-all-checkbox example-margin full-width-checkbox"
+                        [checked]="areAllElementsFiltered(this.filterType)" color="primary"
+                        [indeterminate]="someComplete()" (change)="setAll($event.checked)">
+                        Seleccionar todo
+                    </mat-checkbox>
+                </div>
+                <div class="filtered-elements-container">
+                    <div *ngFor="let element of getFilteredElements(filterType)"
+                        class="element-container divpadre dato">
+                        <mat-checkbox matRipple class="element-checkbox example-margin full-width-checkbox"
+                            [disabled]="element.disabled" color="primary" [checked]="!element.filtered"
+                            (change)="toggleFiltered(element.id, filterType)">
+                            {{ element[filterElement] }}
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
+
+<div class="overlay-container" *ngIf="overlay" (click)="toggleMenu()"
+    [@overlay]="{value: state, params: {duration: 300}}"></div>
+<ng-template [cdkPortalOutlet]="menuPortal"></ng-template>

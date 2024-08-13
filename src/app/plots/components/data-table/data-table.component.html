@@ -1,0 +1,75 @@
+<!-- <div class="asdfasdf"></div> -->
+
+
+<button (click)="sortDataByColumn(2, true)">son</button>
+<button (click)="sortDataByColumn(2, false)">2</button>
+<button (click)="resetData()">reset</button>
+
+<div class="asdfasdgr">
+    <div class="data-table">
+        <div class="table-rows table-head">
+            <div *ngIf="false" class="column-00">Id </div>
+            <div *ngIf="false" class="column-01">Grupo </div>
+            <div *ngIf="true" class="column-02">Provincia </div>
+            <div *ngIf="true" class="column-03">Municipio </div>
+            <div *ngIf="true" class="column-05">Districto Catastral
+            </div>
+            <div *ngIf="true" class="column-06">Certificado de Titulo
+            </div>
+            <div *ngIf="true" class="column-07">Numero de Parcela </div>
+            <div *ngIf="false" class="column-08">Hectarea </div>
+            <div *ngIf="false" class="column-09">Area</div>
+            <div *ngIf="false" class="column-10">Metros</div>
+            <div *ngIf="false" class="column-11">Decimetros</div>
+            <div *ngIf="true" class="column-12">Metros Cuadrados</div>
+            <div *ngIf="true" class="column-13">Propietario</div>
+            <div *ngIf="false" class="column-14">Titulo</div>
+            <div *ngIf="false" class="column-15">Fecha de registro</div>
+        </div>
+        <div class="table-body">
+            <!-- 
+                    "id": "1",
+    "group": "1",
+    "province": "Azua",
+    "municipality": "Pueblo Viejo",
+    "cadastral_district": "12",
+    "certificate_of_title": "1238759452",
+    "plot_number": "34",
+    "hectare": "12",
+    "area": "10",
+    "meter": "17",
+    "decimeter": "99",
+    "square_meter": "121018",
+    "owner": "Dirección General de Bienes Nacionales",
+    "attached_document": "",
+    "comment": "Luis es una rata",
+    "registration_date": "2024-05-19 09:43:43"
+             -->
+
+
+            <div class="table-rows" *ngFor="let data of getDisplayedData()">
+                <div *ngIf="false" class="column-00">{{data.id}}</div>
+                <div *ngIf="false" class="column-01">{{data.group}}</div>
+                <div *ngIf="true" class="column-02">{{data.province}}</div>
+                <div *ngIf="true" class="column-03">{{data.municipality}}</div>
+                <div *ngIf="true" class="column-05">{{data.cadastral_district}}</div>
+                <div *ngIf="true" class="column-06">{{data.certificate_of_title}}</div>
+                <div *ngIf="true" class="column-07">{{data.plot_number}}</div>
+                <div *ngIf="false" class="column-08">{{data.hectare}}</div>
+                <div *ngIf="false" class="column-09">{{data.area}}</div>
+                <div *ngIf="false" class="column-10">{{data.meter}}</div>
+                <div *ngIf="false" class="column-11">{{data.decimeter}}</div>
+                <div *ngIf="true" class="column-12">{{data.square_meter|number: '1.2-2'}}</div>
+                <div *ngIf="true" class="column-13">{{data.owner}}</div>
+                <div *ngIf="false" class="column-14">{{data.attached_document}}</div>
+                <div *ngIf="false" class="column-15">{{ this.datePipe.transform(data.registration_date, 'dd/M/yyyy') }}</div>
+            </div>
+
+            <div class="bottom-row">
+                <mat-paginator [length]="data.length" [pageSize]="20" [pageSizeOptions]="[10, 20, 50, 100]"
+                    aria-label="Select page" [showFirstLastButtons]="true">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>

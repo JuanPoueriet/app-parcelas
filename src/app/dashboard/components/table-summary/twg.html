@@ -1,0 +1,354 @@
+<div class="asjgdas">
+
+
+    <!-- <div class="asgahsd">
+     
+     
+       <div class="gshsg">
+         Summary Table
+       </div>
+     
+       <div class="adfasfasf">
+     
+         <button>
+           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="24" height="24"
+             viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff99" fill="none" stroke-linecap="round"
+             stroke-linejoin="round">
+             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+             <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" />
+             <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
+             <path d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z" />
+           </svg>
+         </button>
+         <button>
+           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-table-down" width="24" height="24"
+             viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff99" fill="none" stroke-linecap="round"
+             stroke-linejoin="round">
+             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+             <path d="M12.5 21h-7.5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5" />
+             <path d="M3 10h18" />
+             <path d="M10 3v18" />
+             <path d="M19 16v6" />
+             <path d="M22 19l-3 3l-3 -3" />
+           </svg>
+         </button>
+         <button>
+           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-table-options" width="24" height="24"
+             viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff99" fill="none" stroke-linecap="round"
+             stroke-linejoin="round">
+             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+             <path d="M12 21h-7a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7" />
+             <path d="M3 10h18" />
+             <path d="M10 3v18" />
+             <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+             <path d="M19.001 15.5v1.5" />
+             <path d="M19.001 21v1.5" />
+             <path d="M22.032 17.25l-1.299 .75" />
+             <path d="M17.27 20l-1.3 .75" />
+             <path d="M15.97 17.25l1.3 .75" />
+             <path d="M20.733 20l1.3 .75" />
+           </svg>
+         </button>
+     
+       </div>
+      </div> -->
+
+
+    <div class="safasgld">
+
+
+        <mat-form-field>
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date">
+                <input matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <!-- <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+
+        <div class="adfasfasf">
+
+            <button class="sdkfjaslf" matRipple matTooltip="Imprimir tabla">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff99" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" />
+                    <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
+                    <path d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z" />
+                </svg>
+            </button>
+            <button class="sdkfjaslf" (click)="exportarEstructuraAExcel()" matRipple
+                matTooltip="Exportar tabla a Excel">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-table-down" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff99" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12.5 21h-7.5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5" />
+                    <path d="M3 10h18" />
+                    <path d="M10 3v18" />
+                    <path d="M19 16v6" />
+                    <path d="M22 19l-3 3l-3 -3" />
+                </svg>
+            </button>
+
+            <div class="asfgyertyw">
+                <button (click)="openSettings()" class="sdkfjaslf" matRipple matTooltip="Configurar tabla">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-table-options"
+                        width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff99" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 21h-7a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7" />
+                        <path d="M3 10h18" />
+                        <path d="M10 3v18" />
+                        <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M19.001 15.5v1.5" />
+                        <path d="M19.001 21v1.5" />
+                        <path d="M22.032 17.25l-1.299 .75" />
+                        <path d="M17.27 20l-1.3 .75" />
+                        <path d="M15.97 17.25l1.3 .75" />
+                        <path d="M20.733 20l1.3 .75" />
+                    </svg>
+                </button>
+
+
+                <div class="safaseasdg" *ngIf="setting">
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="table-summary">
+        <div class="table-summary-head">
+            <div class="div">
+                <div *ngIf="column_0" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                    <div class="column-0">
+                        <div>Grup.</div>
+
+
+                        <dashboard-filter-summary filterType="group"></dashboard-filter-summary>
+
+                    </div>
+                </div>
+                <div *ngIf="column_1" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                    <div class="column-1">
+                        <div>Provincia</div>
+                        <dashboard-filter-summary filterType="province"></dashboard-filter-summary>
+                    </div>
+                </div>
+                <div *ngIf="column_2" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+
+                    <div class="column-2">
+                        <div>Municipio</div>
+                        <dashboard-filter-summary filterType="municipality"></dashboard-filter-summary>
+                    </div>
+                </div>
+                <div *ngIf="column_3" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                    <div class="column-3">Cant. parcelas por Municipios</div>
+                </div>
+                <div *ngIf="column_4" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                    <div class="column-4">M² por Municipios</div>
+                </div>
+                <div *ngIf="column_5" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                    <div class="column-5">Cant. Municipios</div>
+                </div>
+                <div *ngIf="column_6" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                    <div class="column-6">Cant. de parcelas por Provincias</div>
+                </div>
+                <div *ngIf="column_7" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                    <div class="column-7">Metros²</div>
+                </div>
+                <div *ngIf="column_8" class="centered-content"
+                    [@stretch-Animation]=" {value: state, params: {duration: duration}}">
+                    <div class="column-8">Tareas</div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="table-summary-body">
+            <div>
+
+                <ng-container *ngFor="let groupItem of dataService.data; index as groupIndex">
+                    <div class="grupo" *ngIf="!dataService.data[groupIndex].filtered"
+                        (mouseover)="hover(dataService.data[groupIndex].id)"
+                        (dblclick)="filter.updateFilteringState($event,'group',groupIndex)"
+                        (mouseleave)="leave(dataService.data[groupIndex].id)"
+                        [ngClass]="{'hovered': currentHovered === dataService.data[groupIndex].id}"
+                        [@animacionAltura]=" {value: state, params: {duration: animationDuration} }">
+
+                        <div *ngIf="column_0" class="centered-content"
+                            [@stretch-Animation]="{value: state, params: {duration: duration}}">
+
+
+                            <div class="column-0">
+                                {{dataService.data[groupIndex].name}}
+
+                            </div>
+                        </div>
+                        <div class="provincias">
+
+
+
+                            <ng-container
+                                *ngFor="let provinceItem of dataService.data[groupIndex].provinces; index as provinceIndex;">
+                                <div *ngIf="!dataService.data[groupIndex].provinces[provinceIndex].filtered"
+                                    class="provincia"
+                                    (dblclick)="filter.updateFilteringState($event,'province',groupIndex,provinceIndex)"
+                                    (mouseover)="hover(dataService.data[groupIndex].provinces[provinceIndex].id)"
+                                    (mouseleave)="leave(dataService.data[groupIndex].provinces[provinceIndex].id)"
+                                    [ngClass]="{'hovered': currentHovered === dataService.data[groupIndex].provinces[provinceIndex].id}"
+                                    [@animacionAltura]="{value: state, params: {duration: animationDuration}}">
+
+
+
+                                    <div *ngIf="column_1" class="centered-content"
+                                        [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                                        <div class="column-1">
+                                            {{dataService.data[groupIndex].provinces[provinceIndex].name}}
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf=" column_2 || column_3 || column_4 " class="municipios"
+                                        [@stretch-Animation2]="{value: state, params: {duration: duration}}">
+
+
+
+                                        <ng-container
+                                            *ngFor="let municipalityItem of dataService.data[groupIndex].provinces[provinceIndex].municipalities; index as municipalityIndex">
+                                            <div *ngIf="!dataService.data[groupIndex].provinces[provinceIndex].municipalities[municipalityIndex].filtered"
+                                                class="municipio"
+                                                [@animacionAltura]="{value: state, params: {duration: animationDuration}}"
+                                                (mouseover)="hover(dataService.data[groupIndex].provinces[provinceIndex].municipalities[municipalityIndex].id)"
+                                                (mouseleave)="leave(dataService.data[groupIndex].provinces[provinceIndex].municipalities[municipalityIndex].id)"
+                                                (dblclick)="filter.updateFilteringState($event,'municipality',groupIndex,provinceIndex,municipalityIndex)"
+                                                [ngClass]="{'hovered': currentHovered=== dataService.data[groupIndex].provinces[provinceIndex].municipalities[municipalityIndex].id}">
+
+
+
+                                                <div *ngIf="column_2" class="centered-content"
+                                                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+
+                                                    <div class="column-2">
+                                                        {{dataService.data[groupIndex].provinces[provinceIndex].municipalities[municipalityIndex].name}}
+                                                    </div>
+
+                                                </div>
+
+
+
+                                                <div *ngIf="column_3" class="centered-content"
+                                                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                                                    <div class="column-3">
+                                                        {{
+                                                        dataService.data[groupIndex].provinces[provinceIndex].municipalities[municipalityIndex].quantity_of_parcels_per_municipality
+                                                        | number
+                                                        }}
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="column_4" class="centered-content"
+                                                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                                                    <div class="column-4"> {{
+                                                        dataService.data[groupIndex].provinces[provinceIndex].municipalities[municipalityIndex].square_meters_per_municipality
+                                                        |
+                                                        number: '1.2-2' }}</div>
+
+                                                </div>
+                                            </div>
+                                        </ng-container>
+                                    </div>
+                                    <!-- <div *ngIf="column_5 || column_6 || column_7 || column_8" class="provincias-resumen"> -->
+                                    <div *ngIf="column_5" class="centered-content"
+                                        [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                                        <div class="column-5">
+                                            {{getTotal(dataService.data[groupIndex].provinces[provinceIndex].municipalities,'cant')
+                                            | number}}
+                                        </div>
+                                    </div>
+                                    <div *ngIf="column_6" class=" centered-content"
+                                        [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                                        <div class="column-6">
+                                            {{getTotal(dataService.data[groupIndex].provinces[provinceIndex].municipalities,'quantity_of_parcels_per_municipality')
+                                            | number}}
+                                        </div>
+                                    </div>
+                                    <div *ngIf="column_7" class="centered-content"
+                                        [@stretch-Animation]="{value: state, params: {duration: duration}}">
+
+                                        <div class="column-7">
+                                            {{getTotal(dataService.data[groupIndex].provinces[provinceIndex].municipalities,'square_meters_per_municipality')
+                                            |
+                                            number: '1.2-2'}}
+                                        </div>
+                                    </div>
+                                    <div *ngIf="column_8" class="centered-content"
+                                        [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                                        <div class="column-8">
+                                            {{(getTotal(dataService.data[groupIndex].provinces[provinceIndex].municipalities,'square_meters_per_municipality')
+                                            / 628.8) | number: '1.2-2'}}
+
+                                            <!-- groupIndex: number, provinceIndex?: number, municipalityIndex? -->
+                                        </div>
+                                    </div>
+                                    <!-- </div> -->
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="total">
+
+                <div *ngIf=" column_5 || column_6 || column_7 || column_8 " class="column-4" [@fade]>Total:</div>
+                <div *ngIf="column_5" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                    <div class="column-5">
+                        {{calculateMunicipalityMetrics('municipalityCount') | number}}
+                    </div>
+                </div>
+                <div *ngIf="column_6" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+                    <div class="column-6"> {{calculateMunicipalityMetrics('totalParcelsPerMunicipality') | number}}
+                    </div>
+                </div>
+
+
+                <div *ngIf="column_7" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+
+                    <div class="column-7"> {{calculateMunicipalityMetrics( 'totalSquareMetersPerMunicipality') | number:
+                        '1.2-2'
+                        }}
+                    </div>
+                </div>
+                <div *ngIf="column_8" class="centered-content"
+                    [@stretch-Animation]="{value: state, params: {duration: duration}}">
+
+                    <div class="column-8">
+
+                        {{(calculateMunicipalityMetrics( 'totalSquareMetersPerMunicipality') / 628.8) | number: '1.2-2'
+                        }}
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
