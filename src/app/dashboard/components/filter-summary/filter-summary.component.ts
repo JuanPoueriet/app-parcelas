@@ -467,7 +467,8 @@ export class FilterSummaryComponent implements AfterViewInit, OnDestroy {
     } else if (type === 'province') {
       const group = this.dataService.data.find(group => group.provinces.some(province => province.id === id));
 
-      element.municipalities.forEach(municipality => municipality.filtered = element.filtered);
+      // element.municipalities.forEach(municipality => municipality.filtered = element.filtered);
+      element.municipalities.forEach(municipality => municipality.visible = !element.filtered);
 
 
 

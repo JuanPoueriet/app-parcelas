@@ -78,7 +78,7 @@
                 <div class="filtered-elements-container">
                     <div *ngFor="let element of getFilteredElements(filterType)"
                         class="element-container divpadre dato">
-                        <mat-checkbox matRipple class="element-checkbox example-margin full-width-checkbox"
+                        <mat-checkbox *ngIf="element.visible" matRipple class="element-checkbox example-margin full-width-checkbox"
                             [disabled]="element.disabled" color="primary" [checked]="!element.filtered"
                             (change)="toggleFiltered(element.id, filterType)">
                             {{ element[filterElement] }}

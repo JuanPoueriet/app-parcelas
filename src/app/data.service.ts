@@ -8,6 +8,7 @@ interface Municipality {
   square_meters_per_municipality: number;
   type: string;
   disabled: boolean;
+  visible: boolean;
 }
 
 interface Province {
@@ -18,6 +19,7 @@ interface Province {
   municipalities: Municipality[];
   type: string;
   disabled: boolean;
+  visible: boolean;
 }
 
 interface Group {
@@ -27,6 +29,8 @@ interface Group {
   provinces: Province[];
   type: string;
   disabled: boolean,
+  visible: boolean;
+
 }
 
 interface Parcel {
@@ -49,13 +53,15 @@ export class DataService {
       "id": "ipXmC3rg",
       "filtered": false,
       "disabled": false,
+      "visible": true,
       "type": "group",
       "provinces": [
         {
           "name": "Santo Domingo",
           "ISO_CODE": "DO-32",
           "id": "DTWHeVPj",
-          "filtered": false,
+          "filtered": false,      "visible": true,
+
           "disabled": false,
           "type": "province",
           "municipalities": [
@@ -63,7 +69,8 @@ export class DataService {
               "name": "Santo Domingo Este",
               "id": "LL5QlqJA",
               "filtered": false,
-              "type": "municipality",
+              "type": "municipality",      "visible": true,
+
               "disabled": false,
               "quantity_of_parcels_per_municipality": 2452,
               "square_meters_per_municipality": 1343554.72
@@ -72,7 +79,8 @@ export class DataService {
               "name": "Santo Domingo Norte",
               "id": "gOX73hGS",
               "filtered": false,
-              "type": "municipality",
+              "type": "municipality",      "visible": true,
+
               "disabled": false,
               "quantity_of_parcels_per_municipality": 234,
               "square_meters_per_municipality": 784352
@@ -82,14 +90,16 @@ export class DataService {
               "id": "newID1",
               "filtered": false,
               "type": "municipality",
-              "disabled": false,
+              "disabled": false,      "visible": true,
+
               "quantity_of_parcels_per_municipality": 1567,
               "square_meters_per_municipality": 987654
             },
             {
               "name": "Boca Chica",
               "id": "newID2",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "type": "municipality",
               "disabled": false,
               "quantity_of_parcels_per_municipality": 1234,
@@ -102,14 +112,16 @@ export class DataService {
           "ISO_CODE": "DO-29",
           "id": "csIjxvbe",
           "filtered": false,
-          "disabled": false,
+          "disabled": false,      "visible": true,
+
           "type": "province",
           "municipalities": [
             {
               "name": "Yamasá",
               "id": "dk49IXRI",
               "filtered": false,
-              "disabled": false,
+              "disabled": false,      "visible": true,
+
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 2354,
               "square_meters_per_municipality": 4567
@@ -119,6 +131,8 @@ export class DataService {
               "id": "newID3",
               "filtered": false,
               "disabled": false,
+              "visible": true,
+
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 987,
               "square_meters_per_municipality": 3454645
@@ -129,7 +143,8 @@ export class DataService {
         {
           "name": "San Pedro",
           "ISO_CODE": "DO-23",
-          "id": "newID12",
+          "id": "newID12",      "visible": true,
+
           "filtered": false,
           "disabled": false,
           "type": "province",
@@ -137,7 +152,8 @@ export class DataService {
             {
               "name": "San Pedro de Macorís",
               "id": "newID13",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "disabled": false,
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 1500,
@@ -146,7 +162,8 @@ export class DataService {
             {
               "name": "Consuelo",
               "id": "newID14",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "disabled": false,
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 1200,
@@ -156,7 +173,8 @@ export class DataService {
               "name": "Quisqueya",
               "id": "newID15",
               "filtered": false,
-              "disabled": false,
+              "disabled": false,      "visible": true,
+
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 1000,
               "square_meters_per_municipality": 1600000
@@ -164,7 +182,8 @@ export class DataService {
             {
               "name": "Ramón Santana",
               "id": "newID16",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "disabled": false,
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 800,
@@ -173,7 +192,8 @@ export class DataService {
             {
               "name": "Guayacanes",
               "id": "newID17",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "disabled": false,
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 700,
@@ -187,14 +207,16 @@ export class DataService {
       "name": "2",
       "id": "qv1DM15i",
       "filtered": false,
-      "disabled": false,
+      "disabled": false,      "visible": true,
+
       "type": "group",
       "provinces": [
         {
           "name": "Samaná",
           "ISO_CODE": "DO-20",
           "id": "vrO44yDk",
-          "filtered": false,
+          "filtered": false,      "visible": true,
+
           "disabled": false,
           "type": "province",
           "municipalities": [
@@ -202,7 +224,8 @@ export class DataService {
               "name": "Las Terrenas",
               "id": "6mqrELny",
               "filtered": false,
-              "disabled": false,
+              "disabled": false,      "visible": true,
+
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 221,
               "square_meters_per_municipality": 4352345
@@ -210,7 +233,8 @@ export class DataService {
             {
               "name": "Santa Bárbara de Samaná",
               "id": "newID9",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "disabled": false,
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 678,
@@ -220,7 +244,8 @@ export class DataService {
               "name": "Sánchez",
               "id": "newID10",
               "filtered": false,
-              "disabled": false,
+              "disabled": false,      "visible": true,
+
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 123,
               "square_meters_per_municipality": 23456
@@ -232,7 +257,8 @@ export class DataService {
         {
           "name": "Hato Mayor",
           "ISO_CODE": "DO-30",
-          "id": "newID18",
+          "id": "newID18",      "visible": true,
+
           "filtered": false,
           "disabled": false,
           "type": "province",
@@ -240,7 +266,8 @@ export class DataService {
             {
               "name": "Hato Mayor del Rey",
               "id": "newID19",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "disabled": false,
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 500,
@@ -248,7 +275,8 @@ export class DataService {
             },
             {
               "name": "Sabana de la Mar",
-              "id": "newID20",
+              "id": "newID20",      "visible": true,
+
               "filtered": false,
               "disabled": false,
               "type": "municipality",
@@ -257,7 +285,8 @@ export class DataService {
             },
             {
               "name": "El Valle",
-              "id": "newID21",
+              "id": "newID21",      "visible": true,
+
               "filtered": false,
               "disabled": false,
               "type": "municipality",
@@ -271,13 +300,15 @@ export class DataService {
               "name": "La Altagracia",
               "ISO_CODE": "DO-11",
               "id": "newID22",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "disabled": false,
               "type": "province",
               "municipalities": [
                 {
                   "name": "Higüey",
-                  "id": "newID23",
+                  "id": "newID23",      "visible": true,
+
                   "filtered": false,
                   "disabled": false,
                   "type": "municipality",
@@ -287,7 +318,8 @@ export class DataService {
                 {
                   "name": "San Rafael del Yuma",
                   "id": "newID24",
-                  "filtered": false,
+                  "filtered": false,      "visible": true,
+
                   "disabled": false,
                   "type": "municipality",
                   "quantity_of_parcels_per_municipality": 800,
@@ -300,13 +332,15 @@ export class DataService {
               "ISO_CODE": "DO-08",
               "id": "newID25",
               "filtered": false,
-              "disabled": false,
+              "disabled": false,      "visible": true,
+
               "type": "province",
               "municipalities": [
                 {
                   "name": "El Seibo",
                   "id": "newID26",
-                  "filtered": false,
+                  "filtered": false,      "visible": true,
+
                   "disabled": false,
                   "type": "municipality",
                   "quantity_of_parcels_per_municipality": 500,
@@ -317,7 +351,8 @@ export class DataService {
                   "id": "newID27",
                   "filtered": false,
                   "disabled": false,
-                  "type": "municipality",
+                  "type": "municipality",      "visible": true,
+
                   "quantity_of_parcels_per_municipality": 400,
                   "square_meters_per_municipality": 800000
                 }
@@ -824,7 +859,8 @@ export class DataService {
         // },
         {
           "name": "Elías Piña",
-          "ISO_CODE": "DO-07",
+          "ISO_CODE": "DO-07",      "visible": true,
+
           "id": "newID81",
           "filtered": false,
           "disabled": false,
@@ -833,7 +869,8 @@ export class DataService {
             {
               "name": "Comendador",
               "id": "newID82",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "disabled": false,
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 300,
@@ -842,7 +879,8 @@ export class DataService {
             {
               "name": "Bánica",
               "id": "newID83",
-              "filtered": false,
+              "filtered": false,      "visible": true,
+
               "disabled": false,
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 200,
@@ -854,13 +892,15 @@ export class DataService {
           "name": "Santiago Rodríguez",
           "ISO_CODE": "DO-26",
           "id": "newID84",
-          "filtered": false,
+          "filtered": false,      "visible": true,
+
           "disabled": false,
           "type": "province",
           "municipalities": [
             {
               "name": "San Ignacio de Sabaneta",
-              "id": "newID85",
+              "id": "newID85",      "visible": true,
+
               "filtered": false,
               "disabled": false,
               "type": "municipality",
@@ -873,13 +913,15 @@ export class DataService {
           "name": "Dajabón",
           "ISO_CODE": "DO-05",
           "id": "newID86",
-          "filtered": false,
+          "filtered": false,      "visible": true,
+
           "disabled": false,
           "type": "province",
           "municipalities": [
             {
               "name": "Dajabón",
-              "id": "newID87",
+              "id": "newID87",      "visible": true,
+
               "filtered": false,
               "disabled": false,
               "type": "municipality",
@@ -893,12 +935,14 @@ export class DataService {
           "ISO_CODE": "DO-27",
           "id": "newID88",
           "filtered": false,
-          "disabled": false,
+          "disabled": false,      "visible": true,
+
           "type": "province",
           "municipalities": [
             {
               "name": "Mao",
-              "id": "newID89",
+              "id": "newID89",      "visible": true,
+
               "filtered": false,
               "disabled": false,
               "type": "municipality",
@@ -909,7 +953,8 @@ export class DataService {
               "name": "Esperanza",
               "id": "newID90",
               "filtered": false,
-              "disabled": false,
+              "disabled": false,      "visible": true,
+
               "type": "municipality",
               "quantity_of_parcels_per_municipality": 500,
               "square_meters_per_municipality": 1000000
