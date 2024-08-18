@@ -1,10 +1,10 @@
-import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Subscription, debounceTime, filter, fromEvent, merge } from 'rxjs';
 import { ScrollService } from '../../../scroll.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { formatNumber } from '@angular/common';
 import { PrintService } from '../../../print.service';
-import { KtdGridCompactType, KtdGridLayout, ktdTrackById } from '@katoid/angular-grid-layout';
+import { KtdGridCompactType, KtdGridComponent, KtdGridLayout, ktdTrackById } from '@katoid/angular-grid-layout';
 import { DataService } from '../../../data.service';
 // import { DisplayGrid, GridType, GridsterConfig } from 'angular-gridster2';
 
@@ -13,7 +13,7 @@ import { DataService } from '../../../data.service';
   templateUrl: './dashboard-page.component.html',
   styleUrl: './dashboard-page.component.scss'
 })
-export class DashboardPageComponent implements OnInit, OnDestroy {
+export class DashboardPageComponent implements OnInit, OnDestroy{
   private scrollSub!: Subscription;
 
   constructor(private scrollService: ScrollService, private el: ElementRef, private printService: PrintService,
@@ -23,6 +23,16 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
 
   }
+
+  autoResize = true;
+  preventCollision = false;
+  isDragging = false;
+  isResizing = false;
+  resizeSubscription: Subscription;
+
+
+
+  @ViewChild(KtdGridComponent, {static: true}) grid: KtdGridComponent;
 
   ngOnInit(): void {
     this.scrollSub = this.scrollService.scrollRequest$.subscribe(request => {
@@ -37,6 +47,15 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
 
 
+    this.resizeSubscription = merge(
+      fromEvent(window, 'resize'),
+      fromEvent(window, 'orientationchange')
+  ).pipe(
+      debounceTime(1),
+      filter(() => this.autoResize)
+  ).subscribe(() => {
+      this.grid.resize();
+  });
 
 
 
@@ -54,6 +73,9 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.scrollSub.unsubscribe();
+
+    this.resizeSubscription.unsubscribe();
+
   }
 
   async scrollToPosition(position: number): Promise<void> {
@@ -156,7 +178,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
 gap = 30;
 cols: number = 12;
-rowHeight: number = 125;
+rowHeight: number = 160;
 layout: KtdGridLayout = [
     {id: '0', x: 0, y: 3, w: 4, h: 1},
     {id: '1', x: 4, y: 3, w: 4, h: 1},
@@ -172,7 +194,6 @@ layout: KtdGridLayout = [
 onLayoutUpdated(){
 
 }
-
 
 
 }
