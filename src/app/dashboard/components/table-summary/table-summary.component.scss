@@ -415,7 +415,7 @@ mat-slide-toggle:hover {
 }
 
 .asdfasdfasd{
-    max-width: 1000px;
+    max-width: calc(100vw - 280px);
     overflow-x: auto;
     display: flex;
     align-items: center;
