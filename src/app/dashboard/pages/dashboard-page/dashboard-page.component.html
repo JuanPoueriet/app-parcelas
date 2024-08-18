@@ -36,12 +36,11 @@
 
 
 
-  <div class="dufhiuhfsdf">
-    <!-- <dashboard-column-chart></dashboard-column-chart> -->
-    <app-line-chart></app-line-chart>
-    <dashboard-geo-chart></dashboard-geo-chart>
-    <!-- <dashboard-pie-chart></dashboard-pie-chart> -->
-  </div>
+  <!-- <div class="dufhiuhfsdf">
+    <dashboard-column-chart></dashboard-column-chart>
+    
+    <dashboard-pie-chart></dashboard-pie-chart>
+  </div> -->
 
 
 
@@ -71,7 +70,61 @@
   </ktd-grid-item>
 </ktd-grid> -->
 
-  <ktd-grid [cols]="cols" [rowHeight]="rowHeight" [layout]="layout" [gap]="gap" [backgroundConfig]="{show: 'never'}">
+  <ktd-grid [cols]="cols" [rowHeight]="rowHeight" [layout]="layout" [gap]="gap" [backgroundConfig]="{show: 'never'}" [compactType]="null">
+
+
+    <ktd-grid-item [id]="'3'" [resizable]="true" [draggable]="true">
+      <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
+
+      <svg *ngIf="true" ktdGridResizeHandle class="resize-handle" id="Capa_1" data-name="Capa 1"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281 281">
+        <circle cx="230.5" cy="50.5" r="50" style="fill: #616160; stroke: #1d1d1b; stroke-miterlimit: 10;" />
+        <circle cx="230.5" cy="230.5" r="50" style="fill: #616160;" />
+        <circle cx="50.5" cy="230.5" r="50" style="fill: #616160; stroke: #1d1d1b; stroke-miterlimit: 10;" />
+      </svg>
+
+      <!-- Your grid item content goes here -->
+      
+      <dashboard-geo-chart></dashboard-geo-chart>
+      <!-- Optional Custom placeholder template -->
+      <ng-template ktdGridItemPlaceholder>
+        <!-- Custom placeholder content goes here -->
+        <div class="asdfasdf">
+
+
+        </div>
+      </ng-template>
+      <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
+    </ktd-grid-item>
+
+    <ktd-grid-item [id]="'4'" [resizable]="true" [draggable]="true">
+      <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
+
+      <svg *ngIf="true" ktdGridResizeHandle class="resize-handle" id="Capa_1" data-name="Capa 1"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281 281">
+        <circle cx="230.5" cy="50.5" r="50" style="fill: #616160; stroke: #1d1d1b; stroke-miterlimit: 10;" />
+        <circle cx="230.5" cy="230.5" r="50" style="fill: #616160;" />
+        <circle cx="50.5" cy="230.5" r="50" style="fill: #616160; stroke: #1d1d1b; stroke-miterlimit: 10;" />
+      </svg>
+
+      <!-- Your grid item content goes here -->
+      
+      <app-line-chart></app-line-chart>
+      <!-- Optional Custom placeholder template -->
+      <ng-template ktdGridItemPlaceholder>
+        <!-- Custom placeholder content goes here -->
+        <div class="asdfasdf">
+
+
+        </div>
+      </ng-template>
+      <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
+    </ktd-grid-item>
+
+    
+
+
+
     <ktd-grid-item [id]="'0'" [resizable]="true" [draggable]="true">
       <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
 
@@ -98,6 +151,7 @@
       </ng-template>
       <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
     </ktd-grid-item>
+
     <ktd-grid-item [id]="'1'" [resizable]="true" [draggable]="true">
       <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
 
@@ -125,6 +179,7 @@
       </ng-template>
       <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
     </ktd-grid-item>
+
     <ktd-grid-item [id]="'2'" [resizable]="true" [draggable]="true">
       <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
 
@@ -152,6 +207,8 @@
       </ng-template>
       <!-- <mat-icon ktdGridResizeHandle class="resize-handle-1">open_in_full</mat-icon> -->
     </ktd-grid-item>
+
+
   </ktd-grid>
 
 

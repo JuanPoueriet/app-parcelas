@@ -158,9 +158,12 @@ gap = 30;
 cols: number = 12;
 rowHeight: number = 125;
 layout: KtdGridLayout = [
-    {id: '0', x: 0, y: 0, w: 4, h: 1},
-    {id: '1', x: 4, y: 0, w: 4, h: 1},
-    {id: '2', x: 8, y: 0, w: 4, h: 1},
+    {id: '0', x: 0, y: 3, w: 4, h: 1},
+    {id: '1', x: 4, y: 3, w: 4, h: 1},
+    {id: '2', x: 8, y: 3, w: 4, h: 1},
+    //
+    {id: '3', x: 0, y: 0, w: 6, h: 3},
+    {id: '4', x: 6, y: 0, w: 6, h: 3},
   ];
   trackById = ktdTrackById
   
