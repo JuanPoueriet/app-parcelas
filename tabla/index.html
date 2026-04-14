@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Resumen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="safasgld">
+        <div class="adfasfasf">
+            <button class="sdkfjaslf" title="Imprimir tabla" onclick="printTable()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff99" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" />
+                    <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
+                    <path d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z" />
+                </svg>
+            </button>
+            <button class="sdkfjaslf" onclick="exportToCSV()" title="Exportar tabla a CSV">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-table-down" width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff99" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12.5 21h-7.5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5" />
+                    <path d="M3 10h18" />
+                    <path d="M10 3v18" />
+                    <path d="M19 16v6" />
+                    <path d="M22 19l-3 3l-3 -3" />
+                </svg>
+            </button>
+
+            <div class="asfgyertyw">
+                <button onclick="toggleSettings()" class="sdkfjaslf" title="Configurar tabla">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-table-options" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff99" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 21h-7a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7" />
+                        <path d="M3 10h18" />
+                        <path d="M10 3v18" />
+                        <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M19.001 15.5v1.5" />
+                        <path d="M19.001 21v1.5" />
+                        <path d="M22.032 17.25l-1.299 .75" />
+                        <path d="M17.27 20l-1.3 .75" />
+                        <path d="M15.97 17.25l1.3 .75" />
+                        <path d="M20.733 20l1.3 .75" />
+                    </svg>
+                </button>
+
+                <div id="settingsMenu" class="safaseasdg hidden">
+                    <label class="custom-toggle">
+                        <input type="checkbox" id="togglePaginator" onchange="updateSettings()">
+                        <span class="slider"></span>
+                        Paginator
+                    </label>
+                    <label class="custom-toggle">
+                        <input type="checkbox" id="toggleHover" checked onchange="updateSettings()">
+                        <span class="slider"></span>
+                        Hover
+                    </label>
+
+                    <div class="afdasgdfht">
+                        <label class="custom-toggle"><input type="checkbox" data-col="0" checked onchange="toggleColumn(0)"> <span class="slider"></span> Grupos</label>
+                        <label class="custom-toggle"><input type="checkbox" data-col="1" checked disabled onchange="toggleColumn(1)"> <span class="slider"></span> Provincias</label>
+                        <label class="custom-toggle"><input type="checkbox" data-col="2" checked onchange="toggleColumn(2)"> <span class="slider"></span> Municipios</label>
+                        <label class="custom-toggle"><input type="checkbox" data-col="3" checked onchange="toggleColumn(3)"> <span class="slider"></span> Cant. parcelas por Municipios</label>
+                        <label class="custom-toggle"><input type="checkbox" data-col="4" checked onchange="toggleColumn(4)"> <span class="slider"></span> M² por Municipios</label>
+                        <label class="custom-toggle"><input type="checkbox" data-col="5" checked onchange="toggleColumn(5)"> <span class="slider"></span> Cant. Municipios</label>
+                        <label class="custom-toggle"><input type="checkbox" data-col="6" checked onchange="toggleColumn(6)"> <span class="slider"></span> Cant. de parcelas por Provincias</label>
+                        <label class="custom-toggle"><input type="checkbox" data-col="7" checked onchange="toggleColumn(7)"> <span class="slider"></span> Metros²</label>
+                        <label class="custom-toggle"><input type="checkbox" data-col="8" checked onchange="toggleColumn(8)"> <span class="slider"></span> Tareas</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="asdfasdfasd">
+        <div id="tableContainer">
+            <div class="table-summary">
+                <div class="table-summary-head">
+                    <div class="div" id="tableHead">
+                        <!-- Head content will be generated by script.js -->
+                    </div>
+                </div>
+                <div class="table-summary-body" id="tableBody">
+                    <!-- Body content will be generated by script.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Menu Template (reused for different columns) -->
+    <div id="filterMenu" class="menu hidden">
+        <div class="sorting-buttons">
+            <button onclick="sortData('asc')" class="sort-asc-button">
+                <div class="icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon sort-asc-icon" width="20" height="20"
+                        viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path class="ass" d="M15 10v-5c0 -1.38 .62 -2 2 -2s2 .62 2 2v5m0 -3h-4" />
+                        <path d="M19 21h-4l4 -7h-4" />
+                        <path d="M4 15l3 3l3 -3" />
+                        <path d="M7 6v12" />
+                    </svg>
+                </div>
+                Ordenar de la A hasta la Z
+            </button>
+            <button onclick="sortData('desc')" class="sort-desc-button">
+                <div class="icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon sort-desc-icon" width="20" height="20"
+                        viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path class="ass" d="M15 21v-5c0 -1.38 .62 -2 2 -2s2 .62 2 2v5m0 -3h-4" />
+                        <path d="M19 10h-4l4 -7h-4" />
+                        <path d="M4 15l3 3l3 -3" />
+                        <path d="M7 6v12" />
+                    </svg>
+                </div>
+                Ordenar de la Z hasta la A
+            </button>
+            <button id="clearFiltersBtn" class="clear-filters-button" onclick="resetColumnFilters()">
+                <div class="icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon clear-filters-icon" width="20" height="20"
+                        viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M13.758 19.414l-4.758 1.586v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v1.5" />
+                        <path class="x" d="M22 22l-5 -5" />
+                        <path class="x" d="M17 22l5 -5" />
+                    </svg>
+                </div>
+                Eliminar todos los filtros
+            </button>
+        </div>
+        <div class="search-section">
+            <div class="search-icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon search-icon" width="20" height="20"
+                    viewBox="0 0 24 24" stroke-width="1.25" stroke="#f1f1f1" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M15 15m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                    <path d="M18.5 18.5l2.5 2.5" />
+                    <path d="M4 6h16" />
+                    <path d="M4 12h4" />
+                    <path d="M4 18h4" />
+                </svg>
+            </div>
+            <input type="search" id="filterSearchInput" class="search-input" placeholder="Buscar" oninput="applySearchFilter()">
+        </div>
+        <div class="selection-section">
+            <div class="select-all-container">
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll(this.checked)">
+                    <span class="checkmark"></span>
+                    Seleccionar todo
+                </label>
+            </div>
+            <div id="filterElementsContainer" class="filtered-elements-container">
+                <!-- Elements will be generated by script.js -->
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay-container hidden" onclick="closeAllMenus()"></div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
